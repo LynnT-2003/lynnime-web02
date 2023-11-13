@@ -16,7 +16,7 @@ export default async function handler(request, response) {
     const results = await collection
       .find({})
       .sort({ ranked: 1 })
-      .limit(5000)
+      .limit(3000)
       .toArray();
     response.status(200).json(results);
     // response.status is used to set the HTTP status code, and json is used to send a JSON response.
