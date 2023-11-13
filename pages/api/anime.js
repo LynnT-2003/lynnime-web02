@@ -13,7 +13,7 @@ export default async function handler(request, response) {
     console.log("Just Connected to MongoDB");
     const db = client.db("Lynnime_db");
     const collection = db.collection("anime_list");
-    const results = await collection.find({}).limit(10).toArray();
+    const results = await collection.find({}).toArray();
     response.status(200).json(results);
     // response.status is used to set the HTTP status code, and json is used to send a JSON response.
   } catch (e) {
